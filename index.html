@@ -4,8 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lab3: Conditions, Arrays, Events</title>
-    
+    <title>Lab 3: Conditions, Arrays, Events</title>
+    <style>
+        .box {
+            width: 50px;
+            height: 50px;
+            border: solid 5px;
+            transition: all 2s ease-out;
+        }
+
+        .move {
+            transform: translateX('300px');
+            background-color: blue;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -17,6 +29,10 @@
     </header>
     
     <main>
+
+        <button id="mybutton">Move Box</button>
+
+        <div class="box">box</div>
 
 
 
@@ -33,6 +49,23 @@
     </footer>
 
     <script>
+        // make reference to button
+
+        const mybutton = document.getElementById('mybutton');
+
+
+
+        // create listener to detect click on button
+
+        mybutton.addEventListener('click', (e)=> {
+            const box = document.querySelector('.box')
+            box. classList.toggle('move');
+        });
+
+
+
+
+
        // alert('hello!')
 
        // get user input
