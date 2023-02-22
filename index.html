@@ -14,9 +14,45 @@
         }
 
         .move {
-            transform: translateX('300px');
+            transform: translateX(300px);
             background-color: blue;
         }
+
+        .box2 {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            position: relative;
+            animation-name: alt;
+            animation-duration: 4s ;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+
+        .move2 {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            position: relative;
+            animation-name: alt;
+            animation-duration: 0s ;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+
+
+      
+
+       
+
+        @keyframes alt {
+            0% {background-color: aqua; left: 0px; top: 0px;}
+            25% {background-color: aquamarine; left: 300px; top: 0px;}
+            50% {background-color: chartreuse; left: 300px; top: 300px;}
+            75% {background-color: cadetblue; left: 0px; top: 300px;}
+            100% {background-color: aqua; left: 0px; top: 0px;}
+        }
+
     </style>
 </head>
 <body>
@@ -34,6 +70,9 @@
 
         <div class="box">box</div>
 
+        <button id="mybutton2">Stop The Box</button>
+
+        <div class="box2"></div>
 
 
 
@@ -62,7 +101,13 @@
             box. classList.toggle('move');
         });
 
+        const mybutton2 = document.getElementById('mybutton2');
 
+        mybutton2.addEventListener('click', (e)=> {
+            const box2 = document.querySelector('.box2')
+            box2. classList.toggle('move2');
+
+        });
 
 
 
